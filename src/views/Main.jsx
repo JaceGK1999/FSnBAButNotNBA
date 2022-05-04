@@ -27,12 +27,9 @@ export default function Main() {
         {char.map((item) => (
           <article key={item.id}>
             <div>
-              <h1>
+              <a href="item.name">
                 Name: {item.name} ({item.status})
-              </h1>
-              <h3>
-                Specifics: {item.gender} {item.species}
-              </h3>
+              </a>
             </div>
           </article>
         ))}
