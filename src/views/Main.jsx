@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom/';
+import CharacterCard from '../components/Charecters';
 import Status from '../components/Filter';
 import { fetchRnM } from '../services/fetch';
 
@@ -6,6 +10,8 @@ export default function Main() {
   const [char, setChar] = useState([]);
   const [stat, setStat] = useState('Alive');
   const [load, setLoad] = useState(true);
+  const { url, path } = useRouteMatch();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -27,12 +33,15 @@ export default function Main() {
         {char.map((item) => (
           <article key={item.id}>
             <div>
-              <a href="item.name">
+              <a href={`${url}/${item.id}`}>
                 Name: {item.name} ({item.status})
               </a>
             </div>
           </article>
         ))}
+        <Route path={`${path}/:id`}>
+          <CharacterCard />
+        </Route>
       </>
     </>
   );

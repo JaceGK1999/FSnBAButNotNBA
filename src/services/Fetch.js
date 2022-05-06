@@ -9,3 +9,4 @@ export async function fetchRnM(setLife) {
   console.log(rAndMData, 'R&M data');
   return rAndMData.results;
 }
+
