@@ -6,7 +6,5 @@ export async function fetchRnM(setLife) {
     `https://rickandmortyapi.com/api/character/?${status.toString()}`
   );
   const rAndMData = await response.json();
-  console.log(rAndMData, 'R&M data');
   return rAndMData.results;
 }
-

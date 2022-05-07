@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom/';
 import CharacterCard from '../components/Charecters';
@@ -11,7 +10,6 @@ export default function Main() {
   const [stat, setStat] = useState('Alive');
   const [load, setLoad] = useState(true);
   const { url, path } = useRouteMatch();
-  const { id } = useParams();
 
   useEffect(() => {
     const fetchApi = async () => {
