@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 // import { useRouteMatch } from 'react-router-dom/';
 import CharacterCard from '../components/Characters';
 import Status from '../components/Filter';
-import { fetchRnM } from '../services/fetch';
+import { fetchRnM } from '../services/fetchChars.jsx';
 
 export default function Main() {
   const [char, setChar] = useState([]);
