@@ -10,7 +10,6 @@ export default function Main() {
   const [char, setChar] = useState([]);
   const [stat, setStat] = useState('Alive');
   const [load, setLoad] = useState(true);
-  const { url, path } = useRouteMatch();
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -32,14 +31,14 @@ export default function Main() {
         {char.map((item) => (
           <article key={item.id}>
             <div>
-              <a href={`${url}/${item.id}`}>
+              <a href={`${item.id}`}>
                 Name: {item.name} ({item.status})
               </a>
             </div>
           </article>
         ))}
         <BrowserRouter>
-          <Route path={`${path}/:id`}>
+          <Route path={'/:id'}>
             <CharacterCard />
           </Route>
         </BrowserRouter>

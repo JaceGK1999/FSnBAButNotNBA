@@ -10,12 +10,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/char">
+          <Route path="/">
             <Main />
           </Route>
-          <Route path="/">
+          {/* <Route path="/">
             <Holder />
-          </Route>
+          </Route> */}
         </Switch>
       </BrowserRouter>
     </div>
