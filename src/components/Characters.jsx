@@ -17,8 +17,8 @@ export default function CharacterCard() {
   return (
     <article>
       <img alt={`${char.name}`} src={char.image} />
-      <h1>Name: {char.name}</h1>
-      <h3>
+      <h1 aria-label='headerSize1'>Name: {char.name}</h1>
+      <h3 aria-label='headerSize3'>
         Specifics: {char.gender} {char.species}
       </h3>
     </article>
