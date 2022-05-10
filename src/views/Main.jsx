@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-// import { useRouteMatch } from 'react-router-dom/';
 import CharacterCard from '../components/Characters';
 import Status from '../components/Filter';
 import { fetchRnM } from '../services/fetchChars.jsx';
@@ -37,11 +35,9 @@ export default function Main() {
             </div>
           </article>
         ))}
-        <BrowserRouter>
           <Route path={'/:id'}>
             <CharacterCard />
           </Route>
-        </BrowserRouter>
       </>
     </>
   );
